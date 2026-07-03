@@ -1,0 +1,103 @@
+﻿image_path,mask_path,target_presence,source_type,label,sample_group,filename,split
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550374-2 10х.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550374_2_10х_c9a0ffbe.png,1,manual_positive,talc,2550374_2_10х_c9a0ffbe,2550374-2 10х.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550375-1 10х.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550375_1_10х_050d9a27.png,1,manual_positive,talc,2550375_1_10х_050d9a27,2550375-1 10х.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550375-3 5х.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550375_3_5х_5e120071.png,1,manual_positive,talc,2550375_3_5х_5e120071,2550375-3 5х.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550376-1 5x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550376_1_5x_2fcf85c1.png,1,manual_positive,talc,2550376_1_5x_2fcf85c1,2550376-1 5x.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550376-2 10x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550376_2_10x_eb9f7e9c.png,1,manual_positive,talc,2550376_2_10x_eb9f7e9c,2550376-2 10x.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550377-1 5x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550377_1_5x_d3554d28.png,1,manual_positive,talc,2550377_1_5x_d3554d28,2550377-1 5x.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550378-1 5x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550378_1_5x_072189f2.png,1,manual_positive,talc,2550378_1_5x_072189f2,2550378-1 5x.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550381-1 10x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550381_1_10x_9c9fd815.png,1,manual_positive,talc,2550381_1_10x_9c9fd815,2550381-1 10x.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550381-2 10x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550381_2_10x_a197f5f4.png,1,manual_positive,talc,2550381_2_10x_a197f5f4,2550381-2 10x.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\2550382-1 10x.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\2550382_1_10x_ce423d73.png,1,manual_positive,talc,2550382_1_10x_ce423d73,2550382-1 10x.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3042.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3042_8da1dca3.png,1,manual_positive,talc,DSCN3042_8da1dca3,DSCN3042.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3048.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3048_06a13440.png,1,manual_positive,talc,DSCN3048_06a13440,DSCN3048.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3051.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3051_6de14048.png,1,manual_positive,talc,DSCN3051_6de14048,DSCN3051.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3052.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3052_0e442b3b.png,1,manual_positive,talc,DSCN3052_0e442b3b,DSCN3052.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3053.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3053_223d6999.png,1,manual_positive,talc,DSCN3053_223d6999,DSCN3053.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3056.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3056_1d89762f.png,1,manual_positive,talc,DSCN3056_1d89762f,DSCN3056.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3057.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3057_2f06405f.png,1,manual_positive,talc,DSCN3057_2f06405f,DSCN3057.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN3066.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN3066_0577f247.png,1,manual_positive,talc,DSCN3066_0577f247,DSCN3066.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4695.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4695_eb64afe0.png,1,manual_positive,talc,DSCN4695_eb64afe0,DSCN4695.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4708.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4708_0b39022f.png,1,manual_positive,talc,DSCN4708_0b39022f,DSCN4708.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4714.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4714_7fd0bf27.png,1,manual_positive,talc,DSCN4714_7fd0bf27,DSCN4714.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4715.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4715_8c4cc035.png,1,manual_positive,talc,DSCN4715_8c4cc035,DSCN4715.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4717.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4717_87ce827a.png,1,manual_positive,talc,DSCN4717_87ce827a,DSCN4717.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4718.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4718_f13c3f74.png,1,manual_positive,talc,DSCN4718_f13c3f74,DSCN4718.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4719.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4719_e08c25c5.png,1,manual_positive,talc,DSCN4719_e08c25c5,DSCN4719.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4720.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4720_44869a99.png,1,manual_positive,talc,DSCN4720_44869a99,DSCN4720.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4721.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4721_f60e3125.png,1,manual_positive,talc,DSCN4721_f60e3125,DSCN4721.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4727.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4727_02077272.png,1,manual_positive,talc,DSCN4727_02077272,DSCN4727.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4728.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4728_42b140ce.png,1,manual_positive,talc,DSCN4728_42b140ce,DSCN4728.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4730.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4730_437a47cb.png,1,manual_positive,talc,DSCN4730_437a47cb,DSCN4730.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4731.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4731_aaf0d292.png,1,manual_positive,talc,DSCN4731_aaf0d292,DSCN4731.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4732.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4732_7e4aebc7.png,1,manual_positive,talc,DSCN4732_7e4aebc7,DSCN4732.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4733.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4733_be17e8fd.png,1,manual_positive,talc,DSCN4733_be17e8fd,DSCN4733.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4734.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4734_a7197f7c.png,1,manual_positive,talc,DSCN4734_a7197f7c,DSCN4734.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4735.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4735_7cc6cc6e.png,1,manual_positive,talc,DSCN4735_7cc6cc6e,DSCN4735.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4754.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4754_f8bbd20d.png,1,manual_positive,talc,DSCN4754_f8bbd20d,DSCN4754.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN4755.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN4755_adaea98b.png,1,manual_positive,talc,DSCN4755_adaea98b,DSCN4755.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN5032.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN5032_d16e2124.png,1,manual_positive,talc,DSCN5032_d16e2124,DSCN5032.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN5180.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN5180_056ed492.png,1,manual_positive,talc,DSCN5180_056ed492,DSCN5180.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN5183.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN5183_f53a3398.png,1,manual_positive,talc,DSCN5183_f53a3398,DSCN5183.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN5185.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN5185_b88c40a1.png,1,manual_positive,talc,DSCN5185_b88c40a1,DSCN5185.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Оталькованные руды\DSCN5186.JPG,C:\Users\Мария\ore_hackathon\data\manual_talc\annotations\annotator\masks\DSCN5186_6b4d6b78.png,1,manual_positive,talc,DSCN5186_6b4d6b78,DSCN5186.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\37_.jpg,,0,hard_negative,fine,37,37_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\131_.jpg,,0,hard_negative,fine,131,131_.jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\-62.jpg,,0,hard_negative,fine,62,-62.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\28_.jpg,,0,hard_negative,fine,28,28_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\71_.jpg,,0,hard_negative,fine,71,71_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\116.JPG,,0,hard_negative,fine,116,116.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\-61.jpg,,0,hard_negative,fine,61,-61.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\64_.jpg,,0,hard_negative,fine,64,64_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\69_.jpg,,0,hard_negative,fine,69,69_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\30_.jpg,,0,hard_negative,ordinary,30,30_.jpg,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\42_.jpg,,0,hard_negative,ordinary,42,42_.jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\26_.jpg,,0,hard_negative,ordinary,26,26_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\50_.jpg,,0,hard_negative,ordinary,50,50_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN6123.JPG,,0,hard_negative,fine,DSCN6123,DSCN6123.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN6292.JPG,,0,hard_negative,fine,DSCN6292,DSCN6292.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\52 (2).jpg,,0,hard_negative,fine,52 2,52 (2).jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\53.jpg,,0,hard_negative,fine,53,53.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\45.jpg,,0,hard_negative,fine,45,45.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\117.JPG,,0,hard_negative,fine,117,117.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\45_.jpg,,0,hard_negative,ordinary,45,45_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\77_.jpg,,0,hard_negative,fine,77,77_.jpg,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\73_ (2).jpg,,0,hard_negative,fine,73 2,73_ (2).jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\80_.jpg,,0,hard_negative,fine,80,80_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\70_.jpg,,0,hard_negative,fine,70,70_.jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\32_.jpg,,0,hard_negative,ordinary,32,32_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\60_.jpg,,0,hard_negative,fine,60,60_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\68_.jpg,,0,hard_negative,fine,68,68_.jpg,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\33_ (2).jpg,,0,hard_negative,ordinary,33 2,33_ (2).jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\59_.jpg,,0,hard_negative,fine,59,59_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\63_.jpg,,0,hard_negative,fine,63,63_.jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\94.JPG,,0,hard_negative,fine,94,94.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\170.JPG,,0,hard_negative,ordinary,170,170.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\167.JPG,,0,hard_negative,ordinary,167,167.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\28.jpg,,0,hard_negative,ordinary,28,28.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\23.jpg,,0,hard_negative,fine,23,23.jpg,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\DSCN4710.JPG,,0,hard_negative,ordinary,DSCN4710,DSCN4710.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN1786.JPG,,0,hard_negative,fine,DSCN1786,DSCN1786.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Рядовые руды\DSCN2134.JPG,,0,hard_negative,ordinary,DSCN2134,DSCN2134.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Рядовые руды\DSCN2121.JPG,,0,hard_negative,ordinary,DSCN2121,DSCN2121.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\16.jpg,,0,hard_negative,fine,16,16.jpg,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN8654.JPG,,0,hard_negative,fine,DSCN8654,DSCN8654.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\46.jpg,,0,hard_negative,fine,46,46.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Труднообогатимые руды\DSCN2150.JPG,,0,hard_negative,fine,DSCN2150,DSCN2150.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN3342 — копия.JPG,,0,hard_negative,fine,DSCN3342,DSCN3342 — копия.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\35.jpg,,0,hard_negative,fine,35,35.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\DSCN8689.JPG,,0,hard_negative,ordinary,DSCN8689,DSCN8689.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\252 1.jpg,,0,hard_negative,fine,252 1,252 1.jpg,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч1\Рядовые руды\DSCN2191.JPG,,0,hard_negative,ordinary,DSCN2191,DSCN2191.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN1045.JPG,,0,hard_negative,fine,DSCN1045,DSCN1045.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN4322.JPG,,0,hard_negative,fine,DSCN4322,DSCN4322.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\22_.jpg,,0,hard_negative,ordinary,22,22_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\81_.jpg,,0,hard_negative,ordinary,81,81_.jpg,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\DSCN8761.JPG,,0,hard_negative,ordinary,DSCN8761,DSCN8761.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\76.JPG,,0,hard_negative,fine,76,76.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\DSCN6183.JPG,,0,hard_negative,ordinary,DSCN6183,DSCN6183.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN2935.JPG,,0,hard_negative,fine,DSCN2935,DSCN2935.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\DSCN1734.JPG,,0,hard_negative,ordinary,DSCN1734,DSCN1734.JPG,validation
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\тонкие\DSCN8646.JPG,,0,hard_negative,fine,DSCN8646,DSCN8646.JPG,test
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\152.JPG,,0,hard_negative,ordinary,152,152.JPG,train
+C:\Users\Мария\ore_hackathon\data\raw\Фото руд по сортам. ч2\рядовые\124.JPG,,0,hard_negative,ordinary,124,124.JPG,train
