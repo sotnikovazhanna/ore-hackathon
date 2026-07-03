@@ -13,8 +13,21 @@ __pycache__/
 .vscode/
 .idea/
 
-# Исходные и подготовленные данные
-data/
+# Сырые данные не загружаются,
+# но ручные маски и таблицы задач сохраняются в Git
+data/*
+!data/manual_talc/
+data/manual_talc/*
+!data/manual_talc/tasks.csv
+!data/manual_talc/merged_annotations.csv
+!data/manual_talc/talc_segmentation_manifest.csv
+!data/manual_talc/status/
+!data/manual_talc/status/*.csv
+!data/manual_talc/annotations/
+!data/manual_talc/annotations/**
+!data/manual_talc/review/
+!data/manual_talc/review/*.csv
+!data/manual_talc/review/*.jpg
 
 # Результаты экспериментов
 outputs/
