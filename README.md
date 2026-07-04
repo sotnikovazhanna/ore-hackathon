@@ -71,7 +71,7 @@ Ctrl + C
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\install_release.ps1 `
-  -ProjectRoot "C:\Users\Мария\ore_hackathon" `
+  -ProjectRoot "C:\Users\u1\ore_hackathon" `
   -InstallRequirements
 ```
 
