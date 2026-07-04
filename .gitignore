@@ -45,3 +45,12 @@ outputs/
 *.log
 .DS_Store
 Thumbs.db
+
+# Local runtime / backups
+.venv/
+__pycache__/
+*/__pycache__/
+_release_backup_*/
+_jury_ui_backup_*/
+outputs/
+.streamlit/secrets.toml
