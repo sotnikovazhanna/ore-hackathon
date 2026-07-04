@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import io
 import inspect
@@ -19,8 +19,8 @@ from src.ore_pipeline import AnalysisResult, OreAnalyzer
 APP_API_VERSION = "orescope-final-v1"
 
 st.set_page_config(
-    page_title="РђРЅР°Р»РёР· РїРѕР»РёСЂРѕРІР°РЅРЅС‹С… С€Р»РёС„РѕРІ",
-    page_icon="рџ”¬",
+    page_title="Анализ полированных шлифов",
+    page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -173,12 +173,12 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown('<div class="app-kicker">РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№ Р°РЅР°Р»РёР· РёР·РѕР±СЂР°Р¶РµРЅРёР№</div>', unsafe_allow_html=True)
-st.markdown('<div class="app-title">рџ”¬ РђРЅР°Р»РёР· РїРѕР»РёСЂРѕРІР°РЅРЅС‹С… С€Р»РёС„РѕРІ</div>', unsafe_allow_html=True)
+st.markdown('<div class="app-kicker">Автоматический анализ изображений</div>', unsafe_allow_html=True)
+st.markdown('<div class="app-title">🔬 Анализ полированных шлифов</div>', unsafe_allow_html=True)
 st.markdown(
-    '<div class="app-subtitle">Р—Р°РіСЂСѓР·РёС‚Рµ РїР°РЅРѕСЂР°РјРЅРѕРµ РёР·РѕР±СЂР°Р¶РµРЅРёРµ С€Р»РёС„Р°. '
-    'РЎРёСЃС‚РµРјР° РѕС†РµРЅРёС‚ РїР»РѕС‰Р°РґСЊ Р·РѕРЅС‹ РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ, РґРѕР»СЋ СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹ Рё '
-    'РїСЂРµРѕР±Р»Р°РґР°СЋС‰РёР№ С‚РёРї СЃСЂР°СЃС‚Р°РЅРёР№, Р·Р°С‚РµРј СЃС„РѕСЂРјРёСЂСѓРµС‚ Р·Р°РєР»СЋС‡РµРЅРёРµ Рё РѕС‚С‡С‘С‚.</div>',
+    '<div class="app-subtitle">Загрузите панорамное изображение шлифа. '
+    'Система оценит площадь зоны оталькования, долю сульфидной фазы и '
+    'преобладающий тип срастаний, затем сформирует заключение и отчёт.</div>',
     unsafe_allow_html=True,
 )
 
@@ -234,29 +234,29 @@ def build_pdf_report(
             font_name = "Helvetica"
 
     pdf.setFont(font_name, 18)
-    pdf.drawString(30, page_height - 35, "РћС‚С‡С‘С‚ Р°РЅР°Р»РёР·Р° РїРѕР»РёСЂРѕРІР°РЅРЅРѕРіРѕ С€Р»РёС„Р°")
+    pdf.drawString(30, page_height - 35, "Отчёт анализа полированного шлифа")
     pdf.setFont(font_name, 10)
-    pdf.drawString(30, page_height - 55, f"Р¤Р°Р№Р»: {filename}")
+    pdf.drawString(30, page_height - 55, f"Файл: {filename}")
 
     pdf.setFont(font_name, 16)
     pdf.drawString(30, page_height - 82, str(row["ore_class"]))
     pdf.setFont(font_name, 9)
 
     lines = [
-        f"РћСЃРЅРѕРІР°РЅРёРµ Р·Р°РєР»СЋС‡РµРЅРёСЏ: {row['decision_reason']}",
-        f"Р—РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ: {row['talc_share_percent']:.1f}% РїР»РѕС‰Р°РґРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
-        f"РЎСѓР»СЊС„РёРґРЅР°СЏ С„Р°Р·Р°: {row['sulfide_share_percent']:.1f}% РїР»РѕС‰Р°РґРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
+        f"Основание заключения: {row['decision_reason']}",
+        f"Зона оталькования: {row['talc_share_percent']:.1f}% площади изображения",
+        f"Сульфидная фаза: {row['sulfide_share_percent']:.1f}% площади изображения",
         (
-            "РћР±С‹С‡РЅС‹Рµ СЃСЂР°СЃС‚Р°РЅРёСЏ: "
-            f"{row['ordinary_fraction_of_sulfides']:.1f}% РѕР±РЅР°СЂСѓР¶РµРЅРЅРѕР№ СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹"
+            "Обычные срастания: "
+            f"{row['ordinary_fraction_of_sulfides']:.1f}% обнаруженной сульфидной фазы"
         ),
         (
-            "РўРѕРЅРєРёРµ СЃСЂР°СЃС‚Р°РЅРёСЏ: "
-            f"{row['fine_fraction_of_sulfides']:.1f}% РѕР±РЅР°СЂСѓР¶РµРЅРЅРѕР№ СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹"
+            "Тонкие срастания: "
+            f"{row['fine_fraction_of_sulfides']:.1f}% обнаруженной сульфидной фазы"
         ),
-        f"РСЃС…РѕРґРЅРѕРµ СЂР°Р·СЂРµС€РµРЅРёРµ: {row['original_width']} Г— {row['original_height']} px",
-        f"Р Р°Р·СЂРµС€РµРЅРёРµ Р°РЅР°Р»РёР·Р°: {row['analysis_width']} Г— {row['analysis_height']} px",
-        f"Р’СЂРµРјСЏ Р°РЅР°Р»РёР·Р°: {row['processing_seconds']:.1f} СЃ",
+        f"Исходное разрешение: {row['original_width']} × {row['original_height']} px",
+        f"Разрешение анализа: {row['analysis_width']} × {row['analysis_height']} px",
+        f"Время анализа: {row['processing_seconds']:.1f} с",
     ]
 
     y = page_height - 105
@@ -265,7 +265,7 @@ def build_pdf_report(
         y -= 14
 
     pdf.setFont(font_name, 8.5)
-    pdf.drawString(30, y - 2, "Р¦РІРµС‚РѕРІР°СЏ РєР°СЂС‚Р°: Р·РµР»С‘РЅС‹Р№ вЂ” РѕР±С‹С‡РЅС‹Рµ; РєСЂР°СЃРЅС‹Р№ вЂ” С‚РѕРЅРєРёРµ; СЃРёРЅРёР№ вЂ” Р·РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ.")
+    pdf.drawString(30, y - 2, "Цветовая карта: зелёный — обычные; красный — тонкие; синий — зона оталькования.")
 
     image_y = 35
     image_height = 285
@@ -295,19 +295,19 @@ def build_pdf_report(
 
 def choose_profile(mode: str, is_gpu: bool) -> dict[str, int | float]:
     profiles = {
-        "РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№": {
+        "Автоматический": {
             "max_mp": 24.0 if is_gpu else 10.0,
             "tile_size": 384,
             "overlap": 24,
             "batch_size": 12 if is_gpu else 2,
         },
-        "Р‘С‹СЃС‚СЂС‹Р№": {
+        "Быстрый": {
             "max_mp": 16.0 if is_gpu else 6.0,
             "tile_size": 384,
             "overlap": 16,
             "batch_size": 12 if is_gpu else 2,
         },
-        "Р”РµС‚Р°Р»СЊРЅС‹Р№": {
+        "Детальный": {
             "max_mp": 40.0 if is_gpu else 18.0,
             "tile_size": 384,
             "overlap": 48,
@@ -345,13 +345,13 @@ def result_row(
 def make_summary_frame(rows: list[dict[str, Any]]) -> pd.DataFrame:
     frame = pd.DataFrame(rows)
     rename = {
-        "filename": "Р¤Р°Р№Р»",
-        "ore_class": "Р—Р°РєР»СЋС‡РµРЅРёРµ",
-        "talc_share_percent": "Р—РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ, % РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
-        "sulfide_share_percent": "РЎСѓР»СЊС„РёРґРЅР°СЏ С„Р°Р·Р°, % РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
-        "ordinary_fraction_of_sulfides": "РћР±С‹С‡РЅС‹Рµ, % СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹",
-        "fine_fraction_of_sulfides": "РўРѕРЅРєРёРµ, % СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹",
-        "processing_seconds": "Р’СЂРµРјСЏ, СЃ",
+        "filename": "Файл",
+        "ore_class": "Заключение",
+        "talc_share_percent": "Зона оталькования, % изображения",
+        "sulfide_share_percent": "Сульфидная фаза, % изображения",
+        "ordinary_fraction_of_sulfides": "Обычные, % сульфидной фазы",
+        "fine_fraction_of_sulfides": "Тонкие, % сульфидной фазы",
+        "processing_seconds": "Время, с",
     }
     return frame[list(rename)].rename(columns=rename)
 
@@ -373,83 +373,83 @@ analyzer = load_analyzer()
 pipeline_path = inspect.getfile(OreAnalyzer)
 status_method = getattr(analyzer, "model_status", None)
 if not callable(status_method):
-    st.error("РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РїСѓСЃС‚РёС‚СЊ РјРѕРґСѓР»СЊ Р°РЅР°Р»РёР·Р°: СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹ РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹Рµ С„Р°Р№Р»С‹ РїСЂРѕРµРєС‚Р°.")
-    st.code(f"Р—Р°РіСЂСѓР¶РµРЅРЅС‹Р№ РјРѕРґСѓР»СЊ: {pipeline_path}")
+    st.error("Не удалось запустить модуль анализа: установлены несовместимые файлы проекта.")
+    st.code(f"Загруженный модуль: {pipeline_path}")
     st.stop()
 
 status = status_method()
 if status.get("api_version") != APP_API_VERSION:
-    st.error("РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РїСѓСЃС‚РёС‚СЊ РјРѕРґСѓР»СЊ Р°РЅР°Р»РёР·Р°: СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹ РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹Рµ С„Р°Р№Р»С‹ РїСЂРѕРµРєС‚Р°.")
-    st.code(f"РњРѕРґСѓР»СЊ: {pipeline_path}")
+    st.error("Не удалось запустить модуль анализа: установлены несовместимые файлы проекта.")
+    st.code(f"Модуль: {pipeline_path}")
     st.stop()
 
 if not status.get("ready"):
-    st.error("РќРµ РЅР°Р№РґРµРЅС‹ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹Рµ С„Р°Р№Р»С‹ РјРѕРґРµР»РµР№. РџСЂРѕРІРµСЂСЊС‚Рµ РїР°РїРєСѓ models.")
+    st.error("Не найдены обязательные файлы моделей. Проверьте папку models.")
     st.stop()
 
 with st.sidebar:
-    st.header("РќР°СЃС‚СЂРѕР№РєРё")
+    st.header("Настройки")
     mode = st.radio(
-        "Р РµР¶РёРј Р°РЅР°Р»РёР·Р°",
-        ["РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№", "Р‘С‹СЃС‚СЂС‹Р№", "Р”РµС‚Р°Р»СЊРЅС‹Р№"],
+        "Режим анализа",
+        ["Автоматический", "Быстрый", "Детальный"],
         index=0,
         captions=[
-            "Р РµРєРѕРјРµРЅРґСѓРµС‚СЃСЏ РґР»СЏ Р±РѕР»СЊС€РёРЅСЃС‚РІР° РёР·РѕР±СЂР°Р¶РµРЅРёР№",
-            "РњРёРЅРёРјР°Р»СЊРЅРѕРµ РІСЂРµРјСЏ РѕР±СЂР°Р±РѕС‚РєРё",
-            "Р‘РѕР»СЊС€Рµ РґРµС‚Р°Р»РµР№ РЅР° РєСЂСѓРїРЅС‹С… РїР°РЅРѕСЂР°РјР°С…",
+            "Рекомендуется для большинства изображений",
+            "Минимальное время обработки",
+            "Больше деталей на крупных панорамах",
         ],
     )
     st.divider()
-    st.success("РЎРёСЃС‚РµРјР° РіРѕС‚РѕРІР° Рє СЂР°Р±РѕС‚Рµ")
+    st.success("Система готова к работе")
 
-with st.expander("РљР°Рє С„РѕСЂРјРёСЂСѓРµС‚СЃСЏ Р·Р°РєР»СЋС‡РµРЅРёРµ", expanded=False):
+with st.expander("Как формируется заключение", expanded=False):
     st.markdown(
         """
-        1. Р•СЃР»Рё Р·РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ Р·Р°РЅРёРјР°РµС‚ Р±РѕР»РµРµ **10% РїР»РѕС‰Р°РґРё РёР·РѕР±СЂР°Р¶РµРЅРёСЏ**, РѕР±СЂР°Р·РµС† РѕС‚РЅРѕСЃРёС‚СЃСЏ Рє РѕС‚Р°Р»СЊРєРѕРІР°РЅРЅРѕР№ СЂСѓРґРµ.  
-        2. Р•СЃР»Рё РїРѕСЂРѕРі 10% РЅРµ РїСЂРµРІС‹С€РµРЅ, Р·Р°РєР»СЋС‡РµРЅРёРµ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ РїРѕ РїСЂРµРѕР±Р»Р°РґР°СЋС‰РµРјСѓ С‚РёРїСѓ СЃСѓР»СЊС„РёРґРЅС‹С… СЃСЂР°СЃС‚Р°РЅРёР№.  
-        3. РќР° С†РІРµС‚РѕРІРѕР№ РєР°СЂС‚Рµ РѕР±С‹С‡РЅС‹Рµ СЃСЂР°СЃС‚Р°РЅРёСЏ РѕС‚РјРµС‡РµРЅС‹ Р·РµР»С‘РЅС‹Рј, С‚РѕРЅРєРёРµ вЂ” РєСЂР°СЃРЅС‹Рј, Р·РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ вЂ” СЃРёРЅРёРј.
+        1. Если зона оталькования занимает более **10% площади изображения**, образец относится к оталькованной руде.  
+        2. Если порог 10% не превышен, заключение определяется по преобладающему типу сульфидных срастаний.  
+        3. На цветовой карте обычные срастания отмечены зелёным, тонкие — красным, зона оталькования — синим.
         """
     )
 
 uploaded_files = st.file_uploader(
-    "Р—Р°РіСЂСѓР·РёС‚Рµ TIFF, PNG РёР»Рё JPEG",
+    "Загрузите TIFF, PNG или JPEG",
     type=["tif", "tiff", "png", "jpg", "jpeg"],
     accept_multiple_files=True,
-    help="РњРѕР¶РЅРѕ Р·Р°РіСЂСѓР·РёС‚СЊ РѕРґРЅРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РёР»Рё СЃРµСЂРёСЋ С„Р°Р№Р»РѕРІ. РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р° вЂ” 512 РњР‘.",
+    help="Можно загрузить одно изображение или серию файлов. Максимальный размер одного файла — 512 МБ.",
 )
 
 if not uploaded_files:
-    st.caption("РџРѕРґРґРµСЂР¶РёРІР°СЋС‚СЃСЏ РїР°РЅРѕСЂР°РјРЅС‹Рµ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІС‹СЃРѕРєРѕРіРѕ СЂР°Р·СЂРµС€РµРЅРёСЏ Рё РїР°РєРµС‚РЅР°СЏ РѕР±СЂР°Р±РѕС‚РєР°.")
+    st.caption("Поддерживаются панорамные изображения высокого разрешения и пакетная обработка.")
     st.stop()
 
-st.write(f"Р’С‹Р±СЂР°РЅРѕ С„Р°Р№Р»РѕРІ: **{len(uploaded_files)}**")
+st.write(f"Выбрано файлов: **{len(uploaded_files)}**")
 
 is_gpu = str(status["device"]).startswith("cuda")
 profile = choose_profile(mode, is_gpu=is_gpu)
 
-if st.button("РќР°С‡Р°С‚СЊ Р°РЅР°Р»РёР·", type="primary", width='stretch'):
+if st.button("Начать анализ", type="primary", width='stretch'):
     summary_rows: list[dict[str, Any]] = []
     detailed_results: list[tuple[str, LoadedImage, AnalysisResult, dict[str, Any]]] = []
     errors: list[dict[str, str]] = []
     zip_buffer = io.BytesIO()
-    overall_progress = st.progress(0.0, text="РџРѕРґРіРѕС‚РѕРІРєР° Рє Р°РЅР°Р»РёР·Сѓ")
+    overall_progress = st.progress(0.0, text="Подготовка к анализу")
 
     with zipfile.ZipFile(zip_buffer, mode="w", compression=zipfile.ZIP_DEFLATED) as archive:
         for file_index, uploaded_file in enumerate(uploaded_files):
             file_started = time.time()
             try:
-                with st.status(f"РћР±СЂР°Р±РѕС‚РєР° С„Р°Р№Р»Р°: {uploaded_file.name}", expanded=True) as status_box:
-                    status_box.write("РџРѕРґРіРѕС‚РѕРІРєР° РёР·РѕР±СЂР°Р¶РµРЅРёСЏ")
+                with st.status(f"Обработка файла: {uploaded_file.name}", expanded=True) as status_box:
+                    status_box.write("Подготовка изображения")
                     loaded = load_uploaded_image(
                         uploaded_file,
                         uploaded_file.name,
                         max_analysis_megapixels=float(profile["max_mp"]),
                     )
 
-                    tile_progress = st.progress(0.0, text="Р Р°СЃРїРѕР·РЅР°РІР°РЅРёРµ РѕР±Р»Р°СЃС‚РµР№")
+                    tile_progress = st.progress(0.0, text="Распознавание областей")
 
                     def on_progress(value: float, _text: str) -> None:
-                        tile_progress.progress(value, text="Р Р°СЃРїРѕР·РЅР°РІР°РЅРёРµ РѕР±Р»Р°СЃС‚РµР№")
+                        tile_progress.progress(value, text="Распознавание областей")
 
                     initial_result = analyzer.analyze(
                         loaded.rgb,
@@ -462,17 +462,17 @@ if st.button("РќР°С‡Р°С‚СЊ Р°РЅР°Р»РёР·", type="primar
                     final_loaded = loaded
                     final_result = initial_result
 
-                    # Р’ Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРѕРј СЂРµР¶РёРјРµ РїРѕРіСЂР°РЅРёС‡РЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹ СѓС‚РѕС‡РЅСЏСЋС‚СЃСЏ
-                    # РІ Р±РѕР»СЊС€РµРј СЂР°Р·СЂРµС€РµРЅРёРё. Р­С‚Рѕ РїСЂРѕРёСЃС…РѕРґРёС‚ РЅРµР·Р°РјРµС‚РЅРѕ РґР»СЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ.
+                    # В автоматическом режиме пограничные результаты уточняются
+                    # в большем разрешении. Это происходит незаметно для пользователя.
                     borderline = 7.0 <= initial_result.talc_share_percent <= 13.0
                     can_refine = (
-                        mode == "РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРёР№"
+                        mode == "Автоматический"
                         and borderline
                         and loaded.original_megapixels > loaded.analysis_megapixels * 1.35
                     )
 
                     if can_refine:
-                        status_box.write("РЈС‚РѕС‡РЅРµРЅРёРµ СЂРµР·СѓР»СЊС‚Р°С‚Р°")
+                        status_box.write("Уточнение результата")
                         refined_mp = min(
                             loaded.original_megapixels,
                             float(profile["max_mp"]) * 1.8,
@@ -493,7 +493,7 @@ if st.button("РќР°С‡Р°С‚СЊ Р°РЅР°Р»РёР·", type="primar
                         final_loaded = refined_loaded
                         final_result = refined_result
 
-                    status_box.write("Р¤РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р·Р°РєР»СЋС‡РµРЅРёСЏ Рё РѕС‚С‡С‘С‚Р°")
+                    status_box.write("Формирование заключения и отчёта")
                     elapsed = time.time() - file_started
                     row = result_row(
                         filename=uploaded_file.name,
@@ -519,21 +519,21 @@ if st.button("РќР°С‡Р°С‚СЊ Р°РЅР°Р»РёР·", type="primar
                     )
 
                     status_box.update(
-                        label=f"{uploaded_file.name}: {final_result.ore_class} вЂ” {elapsed:.1f} СЃ",
+                        label=f"{uploaded_file.name}: {final_result.ore_class} — {elapsed:.1f} с",
                         state="complete",
                         expanded=False,
                     )
             except Exception as error:
-                errors.append({"Р¤Р°Р№Р»": uploaded_file.name, "РћС€РёР±РєР°": str(error)})
+                errors.append({"Файл": uploaded_file.name, "Ошибка": str(error)})
                 archive.writestr(
                     f"errors/{file_index + 1:03d}_{uploaded_file.name}.txt",
                     str(error).encode("utf-8"),
                 )
-                st.error(f"РќРµ СѓРґР°Р»РѕСЃСЊ РѕР±СЂР°Р±РѕС‚Р°С‚СЊ {uploaded_file.name}: {error}")
+                st.error(f"Не удалось обработать {uploaded_file.name}: {error}")
 
             overall_progress.progress(
                 (file_index + 1) / len(uploaded_files),
-                text=f"РћР±СЂР°Р±РѕС‚Р°РЅРѕ С„Р°Р№Р»РѕРІ: {file_index + 1} РёР· {len(uploaded_files)}",
+                text=f"Обработано файлов: {file_index + 1} из {len(uploaded_files)}",
             )
 
         if summary_rows:
@@ -556,7 +556,7 @@ if "analysis_summary" not in st.session_state:
     st.stop()
 
 if st.session_state.get("analysis_errors"):
-    with st.expander("Р¤Р°Р№Р»С‹, РєРѕС‚РѕСЂС‹Рµ РЅРµ СѓРґР°Р»РѕСЃСЊ РѕР±СЂР°Р±РѕС‚Р°С‚СЊ", expanded=False):
+    with st.expander("Файлы, которые не удалось обработать", expanded=False):
         st.dataframe(
             pd.DataFrame(st.session_state["analysis_errors"]),
             hide_index=True,
@@ -564,15 +564,15 @@ if st.session_state.get("analysis_errors"):
         )
 
 if not st.session_state["analysis_summary"]:
-    st.error("РќРµ СѓРґР°Р»РѕСЃСЊ РѕР±СЂР°Р±РѕС‚Р°С‚СЊ РЅРё РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р°.")
+    st.error("Не удалось обработать ни одного файла.")
     st.stop()
 
-st.subheader("РЎРІРѕРґРЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹")
+st.subheader("Сводные результаты")
 summary_frame = make_summary_frame(st.session_state["analysis_summary"])
 st.dataframe(summary_frame, width='stretch', hide_index=True)
 
 st.download_button(
-    "РЎРєР°С‡Р°С‚СЊ РІСЃРµ СЂРµР·СѓР»СЊС‚Р°С‚С‹ РѕРґРЅРёРј Р°СЂС…РёРІРѕРј",
+    "Скачать все результаты одним архивом",
     data=st.session_state["analysis_zip"],
     file_name="analysis_results.zip",
     mime="application/zip",
@@ -585,7 +585,7 @@ for filename, loaded, result, row in st.session_state["analysis_results"]:
     st.markdown(
         f"""
         <div class="result-card">
-            <div class="result-label">Р—Р°РєР»СЋС‡РµРЅРёРµ</div>
+            <div class="result-label">Заключение</div>
             <div class="result-class">{result.ore_class}</div>
             <div class="result-reason">{result.decision_reason}.</div>
         </div>
@@ -593,46 +593,46 @@ for filename, loaded, result, row in st.session_state["analysis_results"]:
         unsafe_allow_html=True,
     )
 
-    st.markdown("### Р РµР·СѓР»СЊС‚Р°С‚С‹ РёР·РјРµСЂРµРЅРёСЏ")
+    st.markdown("### Результаты измерения")
     metric_columns = st.columns(4)
     with metric_columns[0]:
         metric_card(
-            "Р—РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ",
+            "Зона оталькования",
             f"{result.talc_share_percent:.1f}%",
-            "РґРѕР»СЏ РѕС‚ РїР»РѕС‰Р°РґРё РІСЃРµРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
+            "доля от площади всего изображения",
         )
     with metric_columns[1]:
         metric_card(
-            "РЎСѓР»СЊС„РёРґРЅР°СЏ С„Р°Р·Р°",
+            "Сульфидная фаза",
             f"{result.sulfide_share_percent:.1f}%",
-            "РґРѕР»СЏ РѕС‚ РїР»РѕС‰Р°РґРё РІСЃРµРіРѕ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ",
+            "доля от площади всего изображения",
         )
     with metric_columns[2]:
         metric_card(
-            "РћР±С‹С‡РЅС‹Рµ СЃСЂР°СЃС‚Р°РЅРёСЏ",
+            "Обычные срастания",
             f"{result.ordinary_fraction_of_sulfides:.1f}%",
-            "РґРѕР»СЏ СЃСЂРµРґРё РѕР±РЅР°СЂСѓР¶РµРЅРЅРѕР№ СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹",
+            "доля среди обнаруженной сульфидной фазы",
         )
     with metric_columns[3]:
         metric_card(
-            "РўРѕРЅРєРёРµ СЃСЂР°СЃС‚Р°РЅРёСЏ",
+            "Тонкие срастания",
             f"{result.fine_fraction_of_sulfides:.1f}%",
-            "РґРѕР»СЏ СЃСЂРµРґРё РѕР±РЅР°СЂСѓР¶РµРЅРЅРѕР№ СЃСѓР»СЊС„РёРґРЅРѕР№ С„Р°Р·С‹",
+            "доля среди обнаруженной сульфидной фазы",
         )
 
     st.markdown(
-        '<div class="section-note">РћР±С‹С‡РЅС‹Рµ Рё С‚РѕРЅРєРёРµ СЃСЂР°СЃС‚Р°РЅРёСЏ РґРµР»СЏС‚ РјРµР¶РґСѓ СЃРѕР±РѕР№ '
-        'РѕР±РЅР°СЂСѓР¶РµРЅРЅСѓСЋ СЃСѓР»СЊС„РёРґРЅСѓСЋ С„Р°Р·Сѓ, РїРѕСЌС‚РѕРјСѓ РёС… СЃСѓРјРјР° СЂР°РІРЅР° 100%.</div>',
+        '<div class="section-note">Обычные и тонкие срастания делят между собой '
+        'обнаруженную сульфидную фазу, поэтому их сумма равна 100%.</div>',
         unsafe_allow_html=True,
     )
 
-    st.markdown("### Р’РёР·СѓР°Р»РёР·Р°С†РёСЏ")
+    st.markdown("### Визуализация")
     st.markdown(
         """
         <div class="legend-row">
-            <span class="legend-item"><span class="legend-dot" style="background:#00d26a"></span>РѕР±С‹С‡РЅС‹Рµ СЃСЂР°СЃС‚Р°РЅРёСЏ</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#ff4b32"></span>С‚РѕРЅРєРёРµ СЃСЂР°СЃС‚Р°РЅРёСЏ</span>
-            <span class="legend-item"><span class="legend-dot" style="background:#276ef1"></span>Р·РѕРЅР° РѕС‚Р°Р»СЊРєРѕРІР°РЅРёСЏ</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#00d26a"></span>обычные срастания</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#ff4b32"></span>тонкие срастания</span>
+            <span class="legend-item"><span class="legend-dot" style="background:#276ef1"></span>зона оталькования</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -642,43 +642,43 @@ for filename, loaded, result, row in st.session_state["analysis_results"]:
     overlay_preview = resize_for_display(result.overlay)
     left, right = st.columns(2)
     with left:
-        st.image(source_preview, caption="РР·РѕР±СЂР°Р¶РµРЅРёРµ, РёСЃРїРѕР»СЊР·РѕРІР°РЅРЅРѕРµ РґР»СЏ Р°РЅР°Р»РёР·Р°", width='stretch')
+        st.image(source_preview, caption="Изображение, использованное для анализа", width='stretch')
     with right:
-        st.image(overlay_preview, caption="Р Р°СЃРїРѕР·РЅР°РЅРЅС‹Рµ РѕР±Р»Р°СЃС‚Рё", width='stretch')
+        st.image(overlay_preview, caption="Распознанные области", width='stretch')
 
-    with st.expander("РЎРІРµРґРµРЅРёСЏ РѕР± РѕР±СЂР°Р±РѕС‚РєРµ", expanded=False):
-        st.write(f"Р’СЂРµРјСЏ Р°РЅР°Р»РёР·Р°: {row['processing_seconds']:.1f} СЃ")
-        st.write(f"РСЃС…РѕРґРЅРѕРµ СЂР°Р·СЂРµС€РµРЅРёРµ: {loaded.original_width} Г— {loaded.original_height} px")
+    with st.expander("Сведения об обработке", expanded=False):
+        st.write(f"Время анализа: {row['processing_seconds']:.1f} с")
+        st.write(f"Исходное разрешение: {loaded.original_width} × {loaded.original_height} px")
         st.write(
-            "Р Р°Р·СЂРµС€РµРЅРёРµ, РёСЃРїРѕР»СЊР·РѕРІР°РЅРЅРѕРµ РґР»СЏ Р°РЅР°Р»РёР·Р°: "
-            f"{loaded.analysis_width} Г— {loaded.analysis_height} px"
+            "Разрешение, использованное для анализа: "
+            f"{loaded.analysis_width} × {loaded.analysis_height} px"
         )
 
     json_bytes = json.dumps(row, ensure_ascii=False, indent=2).encode("utf-8")
     download_columns = st.columns(4)
     download_columns[0].download_button(
-        "РўР°Р±Р»РёС†Р° CSV",
+        "Таблица CSV",
         data=make_summary_frame([row]).to_csv(index=False).encode("utf-8-sig"),
         file_name=f"{Path(filename).stem}_analysis.csv",
         mime="text/csv",
         key=f"csv_{filename}",
     )
     download_columns[1].download_button(
-        "Р¦РІРµС‚РѕРІР°СЏ РєР°СЂС‚Р° PNG",
+        "Цветовая карта PNG",
         data=image_to_png(result.overlay),
         file_name=f"{Path(filename).stem}_color_map.png",
         mime="image/png",
         key=f"png_{filename}",
     )
     download_columns[2].download_button(
-        "Р”Р°РЅРЅС‹Рµ JSON",
+        "Данные JSON",
         data=json_bytes,
         file_name=f"{Path(filename).stem}_analysis.json",
         mime="application/json",
         key=f"json_{filename}",
     )
     download_columns[3].download_button(
-        "РћС‚С‡С‘С‚ PDF",
+        "Отчёт PDF",
         data=build_pdf_report(filename, source_preview, overlay_preview, row),
         file_name=f"{Path(filename).stem}_report.pdf",
         mime="application/pdf",
