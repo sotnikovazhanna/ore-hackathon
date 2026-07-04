@@ -1,3 +1,0 @@
-# Install after the project's existing requirements_final.txt / requirements_talc_upgrade.txt
-reportlab>=4.0
-tifffile>=2024.1
