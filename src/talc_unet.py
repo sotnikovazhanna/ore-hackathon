@@ -34,7 +34,6 @@ class UpBlock(nn.Module):
 
 
 class TalcUNetResNet18(nn.Module):
-    """U-Net decoder with an ImageNet-pretrained ResNet18 encoder."""
 
     def __init__(self, pretrained: bool = True) -> None:
         super().__init__()

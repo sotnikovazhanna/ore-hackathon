@@ -34,7 +34,6 @@ expected_pipeline = (PROJECT_ROOT / "src" / "ore_pipeline.py").resolve()
 if pipeline_path != expected_pipeline:
     fail(f"imported pipeline from {pipeline_path}, expected {expected_pipeline}")
 
-# Test huge-image downscaling on an encoded JPEG.
 rgb = np.zeros((1200, 2000, 3), dtype=np.uint8)
 rgb[..., 0] = np.linspace(0, 255, rgb.shape[1], dtype=np.uint8)
 buffer = io.BytesIO()
@@ -56,7 +55,7 @@ if loaded.analysis_width * loaded.analysis_height > 1_050_000:
 if loaded.rgb.ndim != 3 or loaded.rgb.shape[2] != 3:
     fail(f"unexpected loaded image shape {loaded.rgb.shape}")
 
-# Smoke-test the full public API without model files.
+
 empty_models = PROJECT_ROOT / "_verify_empty_models"
 empty_models.mkdir(exist_ok=True)
 analyzer = OreAnalyzer(model_dir=empty_models, device="cpu")

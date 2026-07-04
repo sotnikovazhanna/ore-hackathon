@@ -269,7 +269,6 @@ class OreAnalyzer:
 
     @staticmethod
     def _sulfide_mask(image: np.ndarray) -> np.ndarray:
-        """Fast physically interpretable detector of bright sulfide candidates."""
         lab = cv2.cvtColor(image, cv2.COLOR_RGB2LAB)
         lightness = lab[..., 0]
         enhanced = cv2.createCLAHE(

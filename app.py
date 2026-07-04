@@ -462,8 +462,6 @@ if st.button("Начать анализ", type="primary", width='stretch'):
                     final_loaded = loaded
                     final_result = initial_result
 
-                    # В автоматическом режиме пограничные результаты уточняются
-                    # в большем разрешении. Это происходит незаметно для пользователя.
                     borderline = 7.0 <= initial_result.talc_share_percent <= 13.0
                     can_refine = (
                         mode == "Автоматический"

@@ -144,12 +144,6 @@ def dice_loss(logits: torch.Tensor, target: torch.Tensor, eps: float = 1e-6) -> 
 
 
 def combined_loss(logits: torch.Tensor, target: torch.Tensor, pos_weight: torch.Tensor) -> torch.Tensor:
-    """Pixel loss + overlap loss + a small area-consistency term.
-
-    The manual masks are polygonal and the applied decision rule depends on the
-    predicted area (>10%), so the area term helps the network match the total
-    amount of talc without overfitting every boundary pixel.
-    """
     probability = torch.sigmoid(logits)
     bce = nn.functional.binary_cross_entropy_with_logits(logits, target, pos_weight=pos_weight)
     overlap = dice_loss(logits, target)
@@ -310,8 +304,6 @@ def evaluate(model: nn.Module, frame: pd.DataFrame, device: torch.device, thresh
         float((negatives["predicted_share_percent"] < 1.0).mean()) if len(negatives) else 1.0
     )
 
-    # Balanced score for checkpoint/threshold selection. It does not let empty
-    # negative masks inflate IoU to 1.0 and it rewards the actual >10% decision.
     selection_score = (
         0.55 * positive_mean_iou
         + 0.30 * threshold_metrics["threshold_f1"]
@@ -345,11 +337,6 @@ def build_prediction_cache(
     overlap: int,
     description: str,
 ) -> list[dict]:
-    """Run the neural network once per image and keep probability maps in RAM.
-
-    Threshold calibration then reuses these maps instead of repeating expensive
-    CPU inference for every candidate threshold.
-    """
     cache: list[dict] = []
     for row in tqdm(frame.itertuples(), total=len(frame), desc=description):
         rgb = load_rgb(row.image_path)
@@ -574,7 +561,6 @@ def main() -> None:
         raise RuntimeError("Training did not produce a checkpoint.")
     model.load_state_dict(best_state)
 
-    # Run expensive neural-network inference only once per validation image.
     validation_cache = build_prediction_cache(
         model,
         validation_frame,
@@ -584,7 +570,6 @@ def main() -> None:
         description="cache validation probabilities",
     )
 
-    # Calibrate the pixel-probability threshold only on validation.
     threshold_rows = []
     for threshold in np.arange(0.25, 0.76, 0.05):
         _, summary = evaluate_cached(validation_cache, float(threshold))
@@ -598,7 +583,6 @@ def main() -> None:
         validation_cache, best_threshold
     )
 
-    # Test remains untouched until the threshold has been selected.
     test_cache = build_prediction_cache(
         model,
         test_frame,

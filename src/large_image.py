@@ -11,9 +11,6 @@ import cv2
 import numpy as np
 from PIL import Image, ImageOps
 
-# The case includes very large microscopy panoramas. Pillow's default safeguard
-# rejects them before we can make a reduced working copy. We therefore disable
-# that check, then enforce our own explicit upper bound below.
 Image.MAX_IMAGE_PIXELS = None
 
 MAX_SOURCE_PIXELS = 700_000_000
@@ -109,7 +106,6 @@ def _load_tiff(data: bytes, max_pixels: int) -> LoadedImage:
                     f"the safety limit is {MAX_SOURCE_PIXELS:,}."
                 )
 
-            # Prefer an existing pyramid level. It avoids decoding the full level.
             chosen = levels[-1]
             for level in levels:
                 width, height = dimensions(level)
@@ -149,8 +145,7 @@ def _load_pillow(data: bytes, max_pixels: int) -> LoadedImage:
             original_width, original_height, max_pixels
         )
 
-        # JPEG draft asks libjpeg to decode directly at a reduced resolution.
-        # This is the crucial path for 100–350 MP panoramas.
+
         decoder = "pillow"
         if image_format in {"JPEG", "JPG"} and scale < 1.0:
             opened.draft("RGB", (target_width, target_height))
@@ -181,11 +176,7 @@ def load_uploaded_image(
     filename: str,
     max_analysis_megapixels: float,
 ) -> LoadedImage:
-    """Decode a possibly huge panorama into a bounded working-resolution RGB array.
 
-    Percent-area estimates are computed on the uniformly reduced image, so the
-    percentage remains comparable while memory and inference time stay bounded.
-    """
 
     data = uploaded_file.getvalue() if hasattr(uploaded_file, "getvalue") else uploaded_file.read()
     if not data:
@@ -198,7 +189,6 @@ def load_uploaded_image(
         try:
             return _load_tiff(data, max_pixels)
         except Exception:
-            # Some vendor TIFF variants are better handled by Pillow.
             return _load_pillow(data, max_pixels)
 
     return _load_pillow(data, max_pixels)
